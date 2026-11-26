@@ -1,0 +1,21 @@
+ flavorDimensions "main"
+
+productFlavors {
+    // The 'local' productFlavor sources common from mavenLocal and is intended to be used
+    // during development.
+    local {
+        dimension "main"
+        versionNameSuffix "-local"
+    }
+
+    // Intended for nightly builds
+    snapshot {
+        dimension "main"
+    }
+
+    // The 'dist' productFlavor sources common from a central repository and is intended
+    // to be used for releases.
+    dist {
+        dimension "main"
+    }
+}
