@@ -1,3 +1,16 @@
+dependencies {
+    // Shared across all flavors
+    implementation "androidx.core:core-ktx:1.13.1"
+
+    // Only included when building the 'local' flavor (e.g., from mavenLocal)
+    localImplementation "com.auraecosystem:common:1.0.0-SNAPSHOT"
+
+    // Only included when building the 'snapshot' flavor
+    snapshotImplementation "com.auraecosystem:common:1.0.0-SNAPSHOT"
+
+    // Only included when building the 'dist' flavor (from a central repo)
+    distImplementation "com.auraecosystem:common:1.0.0"
+
 // Load credentials for VSTS Maven
 project.ext.vstsUsername = System.getenv("ENV_VSTS_MVN_ANDROID_MSAL_USERNAME") != null ? System.getenv("ENV_VSTS_MVN_ANDROID_MSAL_USERNAME") : project.findProperty("vstsUsername")
 project.ext.vstsPassword = System.getenv("ENV_VSTS_MVN_ANDROID_MSAL_ACCESSTOKEN") != null ? System.getenv("ENV_VSTS_MVN_ANDROID_MSAL_ACCESSTOKEN") : project.findProperty("vstsMavenAccessToken")
